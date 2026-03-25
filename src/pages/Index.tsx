@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Microscope, Users, Zap, Award, FlaskConical, TrendingUp, ShieldCheck, DollarSign, ArrowRight, Mail, CheckCircle } from "lucide-react";
-import heroImage from "@/assets/hero-split.jpg";
+
 import AnimatedSection from "@/components/AnimatedSection";
 
 const fadeUp = {
