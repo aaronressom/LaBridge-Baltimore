@@ -18,7 +18,7 @@
     --primary: 268 70% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 60% 18%;
+    --secondary: 220 60% 12%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 20% 96%;
@@ -36,9 +36,9 @@
 
     --radius: 0.75rem;
 
-    --navy: 220 60% 18%;
-    --navy-light: 220 40% 30%;
-    --navy-dark: 220 65% 10%;
+    --navy: 220 60% 12%;
+    --navy-light: 220 40% 22%;
+    --navy-dark: 222 65% 8%;
     --biotech-purple: 268 70% 50%;
     --biotech-purple-light: 268 60% 65%;
     --electric-green: 145 80% 42%;
@@ -95,5 +95,90 @@
   }
   .container-max {
     @apply max-w-7xl mx-auto;
+  }
+
+  /* Dark sections with biotech texture orbs */
+  .biotech-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  .biotech-bg::before,
+  .biotech-bg::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .biotech-bg::before {
+    width: 500px;
+    height: 500px;
+    background: hsl(268 70% 50%);
+    top: -120px;
+    right: -100px;
+  }
+  .biotech-bg::after {
+    width: 400px;
+    height: 400px;
+    background: hsl(145 80% 42%);
+    bottom: -80px;
+    left: -80px;
+  }
+
+  /* Hex grid overlay for dark sections */
+  .hex-grid {
+    position: relative;
+  }
+  .hex-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, hsl(0 0% 100% / 0.03) 1px, transparent 0);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: hsl(0 0% 100% / 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+
+  /* Glowing border for stat blocks */
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(268 70% 50% / 0.5), hsl(145 80% 42% / 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Glowing CTA button */
+  .btn-glow {
+    background: linear-gradient(135deg, hsl(268 70% 50%), hsl(268 60% 60%));
+    box-shadow: 0 0 20px hsl(268 70% 50% / 0.4), 0 0 60px hsl(268 70% 50% / 0.15);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 30px hsl(268 70% 50% / 0.6), 0 0 80px hsl(268 70% 50% / 0.25);
+    transform: scale(1.03);
+  }
+  .btn-glow:active {
+    transform: scale(0.97);
   }
 }
