@@ -57,9 +57,7 @@ const Index = () => {
               className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[1.05] text-secondary-foreground"
             >
               Bridging the{" "}
-              <span className="bg-gradient-to-r from-biotech-purple-light to-primary bg-clip-text text-transparent">
-                Biotech Wall.
-              </span>
+              <span className="text-biotech-purple-light">Biotech Wall.</span>
             </motion.h1>
 
             <motion.p
