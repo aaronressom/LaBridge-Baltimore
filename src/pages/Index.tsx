@@ -43,14 +43,9 @@ const Index = () => {
       </nav>
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[90vh] flex items-center pt-14 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImage} alt="Lab and Baltimore community" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy-dark/50" />
-        </div>
-
-        <div className="relative container-max px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl space-y-6">
+      <section className="relative min-h-[90vh] flex items-center justify-center pt-14 overflow-hidden bg-secondary">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <div className="max-w-3xl mx-auto space-y-8">
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -64,7 +59,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-secondary-foreground"
+              className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[1.05] text-secondary-foreground"
             >
               Bridging the{" "}
               <span className="text-biotech-purple-light">Biotech Wall.</span>
@@ -74,7 +69,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg sm:text-xl text-secondary-foreground/80 max-w-lg"
+              className="text-lg sm:text-xl text-secondary-foreground/80 max-w-xl mx-auto"
             >
               A 12-week accelerator turning Baltimore's untapped talent into lab-ready professionals — no 4-year degree required.
             </motion.p>
@@ -85,12 +80,12 @@ const Index = () => {
               transition={{ duration: 0.7, delay: 0.4 }}
             >
               {submitted ? (
-                <div className="flex items-center gap-3 text-electric-green font-medium">
+                <div className="flex items-center justify-center gap-3 text-electric-green font-medium">
                   <CheckCircle size={20} />
                   <span>Thank you! We'll be in touch soon.</span>
                 </div>
               ) : (
-                <form onSubmit={(e) => handleSubmit(e, "hero")} className="flex flex-col sm:flex-row gap-3 max-w-md">
+                <form onSubmit={(e) => handleSubmit(e, "hero")} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                   <Input
                     type="email"
                     required
