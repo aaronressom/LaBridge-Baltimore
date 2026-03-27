@@ -1,6 +1,8 @@
 # Welcome to LabBridge Baltimore
 ## Bridging the "Biotech Wall" through inclusive, accelerated vocational training.
 
+### https://formspree.io/register (for free api call so we can get the emails actually working)
+
 🔬 Project Overview
 LabBridge Baltimore is a social enterprise developed for the Social Entrepreneurship Theory and Practice (Spring 2026) course. The project addresses a critical economic and industrial gap in Baltimore: the "Biotech Wall."
 
