@@ -1,8 +1,20 @@
+import { Microscope, Building2, Landmark, type LucideIcon } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 
-const cards = [
+interface Card {
+  icon: LucideIcon
+  iconBg: string
+  audience: string
+  accentClass: string
+  borderClass: string
+  bgClass: string
+  body: string
+}
+
+const cards: Card[] = [
   {
-    emoji: '👩‍🔬',
+    icon: Microscope,
+    iconBg: 'bg-biotech-purple/15',
     audience: 'Principal Investigators',
     accentClass: 'text-biotech-purple-light',
     borderClass: 'border-biotech-purple/30',
@@ -10,7 +22,8 @@ const cards = [
     body: 'Stop losing research time to understaffing. Get PI-vetted technicians trained on your exact equipment needs — ready to run protocols from week one.',
   },
   {
-    emoji: '🏢',
+    icon: Building2,
+    iconBg: 'bg-electric-green/15',
     audience: 'Hiring Managers',
     accentClass: 'text-electric-green',
     borderClass: 'border-electric-green/30',
@@ -18,7 +31,8 @@ const cards = [
     body: 'Cut turnover costs and eliminate staffing agency markups. Our B2B recruitment model places pre-screened, lab-ready local talent directly into your open roles.',
   },
   {
-    emoji: '🏛️',
+    icon: Landmark,
+    iconBg: 'bg-blue-400/15',
     audience: 'Institutions & Departments',
     accentClass: 'text-blue-400',
     borderClass: 'border-blue-400/30',
@@ -47,9 +61,11 @@ const ForYouSection = () => (
         {cards.map((card, i) => (
           <AnimatedSection key={card.audience} delay={i * 0.15}>
             <div
-              className={`h-full rounded-2xl p-8 border ${card.borderClass} ${card.bgClass} backdrop-blur-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+              className={`h-full rounded-2xl p-8 border ${card.borderClass} ${card.bgClass} backdrop-blur-md hover:shadow-xl hover:-translate-y-1 transition-transform duration-200 ease-out`}
             >
-              <div className="text-4xl mb-4">{card.emoji}</div>
+              <div className={`w-12 h-12 rounded-xl ${card.iconBg} flex items-center justify-center mb-5`}>
+                <card.icon className={card.accentClass} size={24} aria-hidden="true" />
+              </div>
               <h3 className={`text-xl font-bold mb-3 ${card.accentClass}`}>
                 {card.audience}
               </h3>

@@ -12,15 +12,18 @@ const Index = () => (
   <div className="min-h-screen bg-background">
 
     {/* ─── NAV ─── */}
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-xl border-b border-border/10">
+    <nav
+      aria-label="Main navigation"
+      className="fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-xl border-b border-border/10"
+    >
       <div className="container-max flex items-center justify-between h-14 px-4 sm:px-6 lg:px-8">
         <span className="text-lg font-bold text-secondary-foreground">
           LabBridge <span className="text-primary">Baltimore</span>
         </span>
         <div className="hidden sm:flex items-center gap-6 text-sm text-secondary-foreground/60">
-          <a href="#mission" className="hover:text-secondary-foreground transition-colors">Mission</a>
-          <a href="#for-labs" className="hover:text-secondary-foreground transition-colors">For Labs</a>
-          <a href="#for-pis" className="hover:text-secondary-foreground transition-colors">For PIs</a>
+          <a href="#mission" className="cursor-pointer hover:text-secondary-foreground transition-colors duration-200">Mission</a>
+          <a href="#for-labs" className="cursor-pointer hover:text-secondary-foreground transition-colors duration-200">For Labs</a>
+          <a href="#for-pis" className="cursor-pointer hover:text-secondary-foreground transition-colors duration-200">For PIs</a>
         </div>
         <span className="text-xs font-semibold tracking-widest uppercase text-electric-green">
           Coming Soon
@@ -81,11 +84,12 @@ const Index = () => (
         </div>
       </div>
 
-      {/* Scroll hint */}
+      {/* Scroll hint — animation disabled automatically via CSS prefers-reduced-motion */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-secondary-foreground/30"
         animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+        transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+        aria-hidden="true"
       >
         <ChevronDown size={28} />
       </motion.div>

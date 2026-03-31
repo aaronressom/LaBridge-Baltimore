@@ -83,9 +83,27 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
   }
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Respect reduced-motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Visible focus rings that work on both light and dark backgrounds */
+  :focus-visible {
+    outline: 2px solid hsl(268 70% 65%);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -113,18 +131,20 @@
     z-index: 0;
   }
   .biotech-bg::before {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background: hsl(268 70% 50%);
-    top: -120px;
-    right: -100px;
+    top: -160px;
+    right: -120px;
+    opacity: 0.18;
   }
   .biotech-bg::after {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     background: hsl(145 80% 42%);
-    bottom: -80px;
-    left: -80px;
+    bottom: -100px;
+    left: -100px;
+    opacity: 0.12;
   }
 
   /* Hex grid overlay for dark sections */
@@ -172,13 +192,18 @@
   .btn-glow {
     background: linear-gradient(135deg, hsl(268 70% 50%), hsl(268 60% 60%));
     box-shadow: 0 0 20px hsl(268 70% 50% / 0.4), 0 0 60px hsl(268 70% 50% / 0.15);
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.15s ease;
+    cursor: pointer;
   }
-  .btn-glow:hover {
+  .btn-glow:hover:not(:disabled) {
     box-shadow: 0 0 30px hsl(268 70% 50% / 0.6), 0 0 80px hsl(268 70% 50% / 0.25);
     transform: scale(1.03);
   }
-  .btn-glow:active {
+  .btn-glow:active:not(:disabled) {
     transform: scale(0.97);
+  }
+  .btn-glow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
