@@ -6,6 +6,17 @@ Element.prototype.setPointerCapture = () => {};
 Element.prototype.releasePointerCapture = () => {};
 Element.prototype.scrollIntoView = () => {};
 
+// Polyfill IntersectionObserver for Framer Motion useInView
+const mockIntersectionObserver = vi.fn(() => ({
+  observe: vi.fn(),
+  unobserve: vi.fn(),
+  disconnect: vi.fn(),
+}));
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  value: mockIntersectionObserver,
+});
+
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: (query: string) => ({
