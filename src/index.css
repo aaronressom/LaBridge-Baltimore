@@ -165,9 +165,15 @@
   /* Glassmorphism card */
   .glass-card {
     background: hsl(0 0% 100% / 0.06);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+  @media (min-width: 640px) {
+    .glass-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
   }
 
   /* Glowing border for stat blocks */

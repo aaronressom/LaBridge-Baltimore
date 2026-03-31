@@ -42,16 +42,16 @@ const cards: Card[] = [
 ]
 
 const ForYouSection = () => (
-  <section className="bg-background px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+  <section className="px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
     <div className="container-max">
       <AnimatedSection className="text-center mb-14">
-        <span className="text-primary font-semibold text-sm tracking-widest uppercase">
+        <span className="text-electric-green font-semibold text-sm tracking-widest uppercase">
           Who It's For
         </span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3 mb-4 text-foreground">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3 mb-4 text-secondary-foreground">
           Built for the People Who Keep Labs Running
         </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+        <p className="text-secondary-foreground/60 max-w-2xl mx-auto text-lg">
           Whether you're running experiments, filling open reqs, or stewarding institutional
           investment — LabBridge was designed with your needs in mind.
         </p>
@@ -59,7 +59,7 @@ const ForYouSection = () => (
 
       <div className="grid md:grid-cols-3 gap-8">
         {cards.map((card, i) => (
-          <AnimatedSection key={card.audience} delay={i * 0.15}>
+          <AnimatedSection key={card.audience} delay={i * 0.1}>
             <div
               className={`h-full rounded-2xl p-8 border ${card.borderClass} ${card.bgClass} backdrop-blur-md hover:shadow-xl hover:-translate-y-1 transition-transform duration-200 ease-out`}
             >
@@ -69,7 +69,7 @@ const ForYouSection = () => (
               <h3 className={`text-xl font-bold mb-3 ${card.accentClass}`}>
                 {card.audience}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">{card.body}</p>
+              <p className="text-secondary-foreground/60 leading-relaxed">{card.body}</p>
             </div>
           </AnimatedSection>
         ))}
