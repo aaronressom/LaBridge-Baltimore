@@ -29,16 +29,16 @@ const Index = () => (
       aria-label="Main navigation"
       className="fixed top-0 left-0 right-0 z-50 bg-navy-dark/80 backdrop-blur-xl border-b border-white/[0.06]"
     >
-      <div className="container-max flex items-center justify-between h-14 px-4 sm:px-6 lg:px-8">
-        <span className="text-lg font-bold text-secondary-foreground">
+      <div className="container-max relative flex items-center justify-between h-14 px-4 sm:px-6 lg:px-8">
+        <span className="text-xl font-bold text-secondary-foreground">
           LabBridge <span className="text-primary">Baltimore</span>
         </span>
-        <div className="hidden sm:flex items-center gap-6 text-sm text-secondary-foreground/60">
+        <div className="hidden sm:flex items-center gap-6 text-base text-secondary-foreground/60 absolute left-1/2 -translate-x-1/2">
           <a href="#mission" className="cursor-pointer hover:text-secondary-foreground transition-colors duration-200">Mission</a>
           <a href="#for-labs" className="cursor-pointer hover:text-secondary-foreground transition-colors duration-200">For Labs</a>
           <a href="#for-pis" className="cursor-pointer hover:text-secondary-foreground transition-colors duration-200">For PIs</a>
         </div>
-        <span className="text-xs font-semibold tracking-widest uppercase text-electric-green">
+        <span className="text-sm font-semibold tracking-widest uppercase text-electric-green">
           Coming Soon
         </span>
       </div>
@@ -284,7 +284,7 @@ const Index = () => (
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3 mb-4 text-secondary-foreground">
             Impact That Pays{' '}
-            <span className="bg-gradient-to-r from-biotech-purple-light to-electric-green bg-clip-text text-transparent">
+            <span style={{ background: 'linear-gradient(to right, hsl(268 60% 65%), hsl(145 80% 42%))', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
               for Itself.
             </span>
           </h2>
